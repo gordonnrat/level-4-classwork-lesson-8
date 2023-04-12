@@ -42,41 +42,49 @@
     </main>
     <script>
         //Exercise 1 - create an array of your 6 favorite things
-        
+        let favoriteThings = ["dog","cat","frog","elephant","turtle","dolphin"];
 
         //Exercise 2 - show your most favorite thing on the page
         let myFavorite = document.getElementById('my-favorite');//selects the tag
-        myFavorite.innerHTML;//adds content inside the tag
+        myFavorite.innerHTML = `<li>${favoriteThings[1]}</li>`;//adds content inside the tag
 
         //Exercise 3 - change your favorite thing and show it on the page
         
-        myFavorite.innerHTML;
+        favoriteThings[1] = 'moose';
+        myFavorite.innerHTML = `<li>${favoriteThings[1]}</li>`;
 
         //Exercise 4 - Use the length property to show the number of items in your array
+        let favoriteLength = favoriteThings.length;
         let total = document.getElementById('total');
         
-        total.innerHTML;
+        total.innerHTML = favoriteLength;
 
         //Exercise 5 - iterate through the array and show it on the page using the forEach() method.
         let myList = document.getElementById('all-favorites');
         
-
-        myList.innerHTML;
+        function displayArray(favoriteList){
+        return `<li>${favoriteList}</li>`;
+        };
+        myList.innerHTML = displayArray(favoriteThings);
 
         //Exercise 6 Concatenation of arrays
         let more = document.getElementById('more-favorites');
 
-        more.innerHTML;
+        let yourNewArray = ["anteater","pikachu","bunny"];
+        let combinedArray = favoriteThings.concat(yourNewArray);
+        more.innerHTML = displayArray(combinedArray);
 
         //Exercise 7 push a new item to your array
         let pushed = document.getElementById('favorites-plus-one');
 
-        pushed.innerHTML;
+        favoriteThings.push("snail");
+        pushed.innerHTML = displayArray(favoriteThings);
 
        //Exercise 8 push a new item to your array
        
+        favoriteThings.pop();
         let popped = document.getElementById('favorites-minus-one');
-        popped.innerHTML;
+        popped.innerHTML = displayArray(favoriteThings);
 
         //Exercises 9-12, practice slice(), shift(), unshift() in arrays.js
     </script>
