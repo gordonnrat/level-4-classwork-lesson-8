@@ -61,11 +61,16 @@
 
         //Exercise 5 - iterate through the array and show it on the page using the forEach() method.
         let myList = document.getElementById('all-favorites');
-        
+
         function displayArray(favoriteList){
         return `<li>${favoriteList}</li>`;
         };
-        myList.innerHTML = displayArray(favoriteThings);
+
+        favoriteThings.forEach(function (item) {
+            myList.innerHTML += `<li>${item}</li>`;
+        });
+
+        // myList.innerHTML = displayArray(favoriteThings);
 
         //Exercise 6 Concatenation of arrays
         let more = document.getElementById('more-favorites');
@@ -87,6 +92,17 @@
         popped.innerHTML = displayArray(favoriteThings);
 
         //Exercises 9-12, practice slice(), shift(), unshift() in arrays.js
+        let yourNestedArray = [
+            ['a','b','c'],
+            ['e','f','g'],
+            ['w','x','y']
+        ];
+
+        for (let arrays of yourNestedArray) {
+            for(let item of arrays){
+                console.log(item);
+            }
+        };
     </script>
 
 </body>
